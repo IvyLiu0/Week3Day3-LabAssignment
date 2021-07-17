@@ -29,29 +29,11 @@
             <h3 class="home-h3">Types of Kitten you can adoption</h3>
             <br><br>
 
-            <ul id="album">
-                <!--<li class="photo"><img src="images/cat1.jpeg" alt="cat1"></li>
-                <caption class="caption"><h3>License number:A0001</h3></caption>
-                <li class="photo"><img src="images/cat2.jpeg" alt="cat2"></li>
-                <caption class="caption"><h3>License number:A0002</h3></caption>
-                <li class="photo"><img src="images/cat3.jpeg" alt="cat3"></li>
-                <caption class="caption"><h3>License number:A0003</h3></caption>
-                <li class="photo"><img src="images/cat4.jpeg" alt="cat4"></li>
-                <caption class="caption"><h3>License number:A0004</h3></caption>
-                <li class="photo"><img src="images/cat5.jpeg" alt="cat5"></li>
-                <caption class="caption"><h3>License number:A0005</h3></caption>
-                <li class="photo"><img src="images/cat6.jpeg" alt="cat6"></li>
-                <caption class="caption"><h3>License number:A0006</h3></caption>
-                <li class="photo"><img src="images/cat7.jpeg" alt="cat7"></li>
-                <caption class="caption"><h3>License number:A0007</h3></caption>
-                <li class="photo"><img src="images/cat8.jpeg" alt="cat8"></li>
-                <caption class="caption"><h3>License number:A0008</h3></caption>
-                <li class="photo"><img src="images/cat9.jpeg" alt="cat9"></li>
-                <caption class="caption"><h3>License number:A0009</h3></caption>
-                <li class="photo"><img src="images/cat10.jpeg" alt="cat10"></li>
-                <caption class="caption"><h3>License number:A00010</h3></caption>-->
-                
-            </ul>
+            <div>
+                <ul id="album">
+                    
+                </ul>
+            </div>
         </main>
     </body>
    
@@ -78,20 +60,25 @@
             var closeList = "</li>"; 
             var captions = [];
             var captionName = [];
-            var openCaptionTag = "<Caption class='caption'>";
-            var closeCaptionTag = "</caption>"
+            var openCaptionTag = "<caption class='caption'>";
+            var closeCaptionTag = "</caption>";
+            var description;
+            var descText = "a cute cat";
+            var openDescTag = "<p class='description'>";
+            var closeDescTag = "</p>"
 
             //create a loop to create 6 images starting with index of 0
             for (var i=0; i<10; i++) {
                 fileNames.push("cat"+(i+1));
                 captionName.push("License number:A000" + (i+1));
-                photos.push("<img src='images/" + fileNames[i] + ".jpeg'>");
-                captions.push("<Caption class='caption'>" + "<h3>"+ captionName[i] + "</h3>" +"</caption>");
-                image = openList + photos[i] + captions[i] + closeList;
+                photos.push("<img src='images/" + fileNames[i] + ".jpeg'/>");
+                captions.push(openCaptionTag + "<h3>"+ captionName[i] + "</h3>" + closeCaptionTag);
+                description= openDescTag + descText +closeDescTag;
+                image = openList + photos[i] + captions[i] + description  + closeList;
                 imageList.push(image);
-                
 
             }
+
 
             //display all six image codes stored in the array
             document.getElementById("album").innerHTML = imageList;
@@ -102,3 +89,34 @@
 
 
 </html>
+
+                <!--<li class="photo"><img src="images/cat1.jpeg" alt="cat1"></li>
+                <caption class="caption"><h3>License number:A0001</h3></caption>
+                <p class="description">A cute cat</p>
+                <li class="photo"><img src="images/cat2.jpeg" alt="cat2"></li>
+                <caption class="caption"><h3>License number:A0002</h3></caption>
+                <p class="description">A cute cat</p>
+                <li class="photo"><img src="images/cat3.jpeg" alt="cat3"></li>
+                <caption class="caption"><h3>License number:A0003</h3></caption>
+                <p class="description">A cute cat</p>
+                <li class="photo"><img src="images/cat4.jpeg" alt="cat4"></li>
+                <caption class="caption"><h3>License number:A0004</h3></caption>
+                <p class="description">A cute cat</p>
+                <li class="photo"><img src="images/cat5.jpeg" alt="cat5"></li>
+                <caption class="caption"><h3>License number:A0005</h3></caption>
+                <p class="description">A cute cat</p>
+                <li class="photo"><img src="images/cat6.jpeg" alt="cat6"></li>
+                <caption class="caption"><h3>License number:A0006</h3></caption>
+                <p class="description">A cute cat</p>
+                <li class="photo"><img src="images/cat7.jpeg" alt="cat7"></li>
+                <caption class="caption"><h3>License number:A0007</h3></caption>
+                <p class="description">A cute cat</p>
+                <li class="photo"><img src="images/cat8.jpeg" alt="cat8"></li>
+                <caption class="caption"><h3>License number:A0008</h3></caption>
+                <p class="description">A cute cat</p>
+                <li class="photo"><img src="images/cat9.jpeg" alt="cat9"></li>
+                <caption class="caption"><h3>License number:A0009</h3></caption>
+                <p class="description">A cute cat</p>
+                <li class="photo"><img src="images/cat10.jpeg" alt="cat10"></li>
+                <caption class="caption"><h3>License number:A00010</h3></caption>
+                <p class="description">A cute cat</p>-->
